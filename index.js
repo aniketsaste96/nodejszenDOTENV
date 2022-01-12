@@ -2,7 +2,7 @@ import express from "express";  //3rd party package
 import dotenv from 'dotenv';
 import { MongoClient } from "mongodb"
 const app = express();
-const PORT = 9000;
+const PORT = process.env.PORT;
 
 //env = environment variables to hide url
 dotenv.config();
