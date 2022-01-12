@@ -1,13 +1,14 @@
 import express from "express";  //3rd party package
+import dotenv from 'dotenv';
 import { MongoClient } from "mongodb"
 const app = express();
 const PORT = 9000;
 
-
-
+//env = environment variables to hide url
+dotenv.config();
 //convert body into json called interceptor(middleware)
 //express.json() is middleware
-//mongodb+srv://aniket:<password>@cluster0.5h10b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+console.log(process.env)
 
 const movies = [
     {
@@ -77,7 +78,7 @@ const movies = [
 
 //connect with mongo db
 // const MONGO_URL = "mongodb://localhost";
-const MONGO_URL = "mongodb+srv://aniket:aniket123@cluster0.5h10b.mongodb.net";
+const MONGO_URL = process.env.MONGO_URL;
 
 
 //mongodb://localhost
